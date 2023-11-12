@@ -13,7 +13,7 @@ export class TodoResolver {
     return this.todoService.create(createTodoInput);
   }
 
-  @Query(() => [Todo], { name: 'todo' })
+  @Query(() => [Todo], { name: 'todos' })
   findAll() {
     return this.todoService.findAll();
   }

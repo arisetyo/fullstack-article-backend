@@ -6,6 +6,11 @@ input CreateTodoInput {
   title: String!
 }
 
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
 type Mutation {
   createTodo(createTodoInput: CreateTodoInput!): Todo!
   removeTodo(id: Int!): Todo!
@@ -14,11 +19,14 @@ type Mutation {
 
 type Query {
   todo(id: Int!): Todo!
+  todos: [Todo!]!
 }
 
 type Todo {
+  createdAt: DateTime!
   id: Int!
   title: String!
+  updatedAt: DateTime!
 }
 
 input UpdateTodoInput {
