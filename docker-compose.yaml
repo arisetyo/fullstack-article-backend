@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=244466666
+      - POSTGRES_DB=fullstack_article_db
